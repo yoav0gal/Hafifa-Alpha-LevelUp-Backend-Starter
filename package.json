@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@fastify/type-provider-typebox": "^3.5.0",
-    "fastify": "^4.24.3"
+    "fastify": "^4.24.3",
+    "fastify-sqlite-typed": "^0.1.0"
   }
 }

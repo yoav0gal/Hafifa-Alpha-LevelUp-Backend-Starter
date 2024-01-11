@@ -1,13 +1,13 @@
 import fastify, { FastifyInstance } from "fastify";
 import { TypeBoxTypeProvider } from "@fastify/type-provider-typebox";
 import { members } from "./alphaData";
-import sqlitePlugin from "./plugins/sqlitePlugin";
+import sqlitePlugin from "fastify-sqlite-typed";
 
 const server = fastify({
   // querystringParser: qs.parse,
 }).withTypeProvider<TypeBoxTypeProvider>();
 
-server.register(sqlitePlugin, { file: "db/usda.sql3" });
+server.register(sqlitePlugin, { dbFilename: "db/levelUpdb.sql3" });
 
 server.get("/db/test", async (req, res) => {
   try {
